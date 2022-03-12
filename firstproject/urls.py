@@ -17,10 +17,13 @@ from django.contrib import admin
 from django.urls import path
 from django.urls import re_path as url
 #from django.conf.urls import url
-from myapp.views import sayhello,sayhello2,sayhello3 
+from myapp.views import sayhello, sayhello2, sayhello3, listone 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^$',sayhello),
     url(r'^sayhello2/(\w+)$',sayhello2),
     url(r'^sayhello3/(\w+)$',sayhello3),
+    # url(r'^listone/(\w+)$',listone),
+    url(r'^listone/$',listone),
 ]
