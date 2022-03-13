@@ -17,13 +17,18 @@ from django.contrib import admin
 from django.urls import path
 from django.urls import re_path as url
 #from django.conf.urls import url
-from myapp.views import sayhello, sayhello2, sayhello3, listone 
+from myapp import views
+from myapp.views import sayhello, sayhello2, sayhello3, listone, listall
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^$',sayhello),
     url(r'^sayhello2/(\w+)$',sayhello2),
     url(r'^sayhello3/(\w+)$',sayhello3),
-    # url(r'^listone/(\w+)$',listone),
-    url(r'^listone/$',listone),
+    url(r'^listone/(\w+)$',listone),
+    # url(r'^listone/$',listone),
+    url(r'^listall/$', listall),
+    url(r'^insert/$', views.insert),   #新增資料
+    url(r'^modify/$', views.modify),   #修改資料
+    url(r'^delete/$', views.delete),   #刪除資料
 ]
